@@ -25,7 +25,7 @@
             <div class="option">
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input id="keyword" size="15" type="text" value="영진전문대 카페">
+                        키워드 : <input id="keyword" size="15" type="text" th:value="${search_word}">
                         <button type="submit">검색하기</button>
                     </form>
                 </div>
@@ -86,12 +86,12 @@
             } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
 
                 alert('검색 결과가 존재하지 않습니다.');
-                return;
+
 
             } else if (status === kakao.maps.services.Status.ERROR) {
 
                 alert('검색 결과 중 오류가 발생했습니다.');
-                return;
+
 
             }
         }

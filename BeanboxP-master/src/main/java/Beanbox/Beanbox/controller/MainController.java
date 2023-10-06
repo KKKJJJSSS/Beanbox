@@ -10,11 +10,6 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/gps")
-    public String gps() {
-        return "gps";
-    }
-
     @GetMapping("/login")
     public String login() {
         return "login";

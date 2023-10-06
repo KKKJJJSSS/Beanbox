@@ -74,8 +74,10 @@
                     </div>
                 </div>
                 <hr class="recipe-divider">
-                <div class="d-grid gap-2">
-                    <a class="btn btn-dark" type="button" href="/auth/menu">레시피 상점</a>
+                <div class="recipe-btn gap-4" th:each="recipe : ${recipeList}"
+                     th:if="${img_number.equals(recipe.img_number)}">
+                    <a class="btn btn-dark" href="/auth/menu" type="button">레시피 상점</a>
+                    <a class="btn btn-dark" th:href="@{/gps/word(search_word=${recipe.coffee_name})}" type="button">카페 보러가기</a>
                 </div>
             </div>
         </div>
