@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mariadb://svc.sel3.cloudtype.app:30158/beanbox</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="beanbox@beanbox-db.cdiwwswoud4m.ap-northeast-2.rds.amazonaws.com" uuid="7fea229c-14dc-42ab-879b-2aefc13ef3e9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://beanbox-db.cdiwwswoud4m.ap-northeast-2.rds.amazonaws.com:3306/beanbox</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

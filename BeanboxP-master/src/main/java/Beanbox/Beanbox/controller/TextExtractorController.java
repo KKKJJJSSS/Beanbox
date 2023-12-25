@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class TextExtractor {
+public class TextExtractorController {
     @Autowired
     public BeanMapper beanMapper;
 

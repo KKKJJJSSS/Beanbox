@@ -21,7 +21,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.mybatis:mybatis:3.5.7'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     implementation 'com.google.cloud:google-cloud-vision:3.14.0'
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
