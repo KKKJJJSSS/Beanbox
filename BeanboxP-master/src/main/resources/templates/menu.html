@@ -78,7 +78,7 @@
                                      class="bd-placeholder-img card-img-top" focusable="false" height="300"
                                      preserveAspectRatio="xMidYMid slice"
                                      role="img"
-                                     th:src="@{'../static/images/bean/' + ${recipe.recipe_bean} + '/image' + ${recipe.num} + '.jpg'}"
+                                     th:src="@{'../static/images/bean/' + ${recipe.bean_name} + '/image' + ${recipe.num} + '.jpg'}"
                                      width="100%"/>
                             </a>
                             <div class="card-body" style="height: 140px;">
@@ -87,8 +87,11 @@
                                     <div class="btn-group" style="margin-top: 30px;">
                                         <a class="btn btn-sm btn-outline-dark"
                                            th:href="@{/auth/cartrecipe(img_number=${recipe.img_number})}">보기</a>
-                                        <button class="btn btn-sm btn-outline-secondary addToCart" th:data-coffee-name="${recipe.coffee_name}"
-                                                type="button">장바구니</button>
+                                        <button class="btn btn-sm btn-outline-secondary addToCart"
+                                                th:data-coffee-name="${recipe.coffee_name}"
+                                                type="button">장바구니
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-dark btn-remove-from-recipe" th:data-recipe-id="${recipe.recipe_id}" th:data-bean-name="${recipe.bean_name}">삭제</button>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +117,7 @@
                                      class="bd-placeholder-img card-img-top" focusable="false" height="300"
                                      preserveAspectRatio="xMidYMid slice"
                                      role="img"
-                                     th:src="@{'../static/images/bean/' + ${recipe.recipe_bean} + '/image' + ${recipe.num} + '.jpg'}"
+                                     th:src="@{'../static/images/bean/' + ${recipe.bean_name} + '/image' + ${recipe.num} + '.jpg'}"
                                      width="100%"/>
                             </a>
                             <div class="card-body" style="height: 140px;">
@@ -123,9 +126,11 @@
                                     <div class="btn-group" style="margin-top: 30px;">
                                         <a class="btn btn-sm btn-outline-dark"
                                            th:href="@{/auth/cartrecipe(img_number=${recipe.img_number})}">보기</a>
-                                        <button class="btn btn-sm btn-outline-secondary addToCart" th:data-coffee-name="${recipe.coffee_name}"
+                                        <button class="btn btn-sm btn-outline-secondary addToCart"
+                                                th:data-coffee-name="${recipe.coffee_name}"
                                                 type="button">장바구니
                                         </button>
+                                        <button class="btn btn-sm btn-outline-dark btn-remove-from-recipe" th:data-recipe-id="${recipe.recipe_id}" th:data-bean-name="${recipe.bean_name}">삭제</button>
                                     </div>
                                 </div>
                             </div>

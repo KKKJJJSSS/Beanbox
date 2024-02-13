@@ -13,8 +13,10 @@ import java.util.List;
 @Controller // 해당 클래스가 Spring의 Controller임을 선언
 public class RecipeController {
     public final RecipeMapper recipeMapper;
+
+
     @Autowired
-    public RecipeController(RecipeMapper recipeMapper) {
+    public RecipeController(RecipeMapper recipeMapper ) {
         this.recipeMapper = recipeMapper;
     }
 

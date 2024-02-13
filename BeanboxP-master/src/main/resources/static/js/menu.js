@@ -36,6 +36,44 @@ function addToCart(coffeeName) {
         });
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    var removeFromRecipeButtons = document.querySelectorAll('.btn-remove-from-recipe');
+
+    removeFromRecipeButtons.forEach(function (button) {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            var recipeId = e.target.getAttribute('data-recipe-id');
+            var beanName = e.target.getAttribute('data-bean-name');
+            removeFromRecipe(recipeId, beanName);
+        });
+    });
+});
+
+function removeFromRecipe(recipeId, beanName) {
+    const formData = new FormData();
+    formData.append('recipe_id', recipeId);
+    formData.append('bean_name', beanName);
+
+    fetch("/remove-from-recipe", {
+        method: "POST",
+        body: formData
+    })
+        .then(response => {
+            if (response.ok) {
+                console.log("상품이 삭제되었습니다.");
+                alert("상품이 삭제되었습니다.");
+                location.reload(); // 페이지 새로고침
+            } else {
+                console.log("상품을 삭제하는 데 실패했습니다.");
+                alert("상품을 삭제하는 데 실패했습니다.");
+            }
+        })
+        .catch(error => {
+            console.log("에러:", error);
+            alert("에러가 발생하였습니다.");
+        });
+}
+
 
 //체크박스 처리
 function saveCheckboxState() {

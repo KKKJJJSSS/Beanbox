@@ -20,4 +20,7 @@ public interface CartMapper {
 
     @Delete("DELETE FROM shopping_cart WHERE cart_number = #{cart_number}")
     Integer deleteCoffeeBeanByCartNumber(@Param("cart_number") int cartNumber);
+
+    @Delete("DELETE FROM shopping_cart WHERE recipe_id = #{recipe_id}")
+    Integer deleteCoffeeBeanByRecipeId(@Param("recipe_id") int recipeId);
 }

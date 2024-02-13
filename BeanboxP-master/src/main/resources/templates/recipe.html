@@ -22,7 +22,7 @@
         <div class="row recipe">
             <div class="col-md recipe-img" th:each="recipe : ${recipeList}"
                 th:if="${img_number.equals(recipe.img_number)}">
-                <img alt="americano" class="img-thumbnail" height="auto" th:src="@{'../static/images/bean/' + ${recipe.recipe_bean} + '/' + ${filename} + '.jpg'}"
+                <img alt="americano" class="img-thumbnail" height="auto" th:src="@{'../static/images/bean/' + ${recipe.bean_name} + '/' + ${filename} + '.jpg'}"
                      width="100%">
             </div>
             <div class="col-md recipe-text">
@@ -31,7 +31,7 @@
                         <hr class="featurette-divider">
                         <div class="row">
                             <h class="recipe-name" th:text="${recipe.coffee_name}"></h>
-                            <h class="bean-name" th:text="${recipe.recipe_bean}"></h>
+                            <h class="bean-name" th:text="${recipe.bean_name}"></h>
                         </div>
                         <hr class="recipe-divider">
                         <div class="row">

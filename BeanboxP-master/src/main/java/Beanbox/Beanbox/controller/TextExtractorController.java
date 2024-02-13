@@ -2,6 +2,7 @@ package Beanbox.Beanbox.controller;
 
 import Beanbox.Beanbox.dto.BeanDto;
 import Beanbox.Beanbox.model.BeanMapper;
+import Beanbox.Beanbox.service.BeanService;
 import com.google.cloud.vision.v1.*;
 import com.google.protobuf.ByteString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import java.util.List;
 @Controller
 public class TextExtractorController {
     @Autowired
-    public BeanMapper beanMapper;
+    public BeanService beanService;
 
     @GetMapping("/uploadpage")
     public String home() {
@@ -103,7 +104,7 @@ public class TextExtractorController {
             List<BeanDto> filteredBeans = new ArrayList<>();
 
             // beanList에서 조건을 확인하여 필터링
-            List<BeanDto> beanList = beanMapper.getBeanList();
+            List<BeanDto> beanList = beanService.getBeanList();
             for (BeanDto bean : beanList) {
                 filteredBeans.add(bean);
             }
@@ -134,7 +135,7 @@ public class TextExtractorController {
         String extractedText = beanName;
 
         // beanList에서 조건을 확인하여 필터링
-        List<BeanDto> beanList = beanMapper.getBeanList();
+        List<BeanDto> beanList = beanService.getBeanList();
         for (BeanDto bean : beanList) {
             filteredBeans.add(bean);
         }
